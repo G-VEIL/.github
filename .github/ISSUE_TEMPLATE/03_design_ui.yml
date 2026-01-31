@@ -1,0 +1,75 @@
+name: "Design - UI Spec"
+description: "UI 컴포넌트 스펙/디자인 시스템/에셋 전달"
+title: "[Design/UI] "
+labels: ["design", "ui"]
+body:
+  - type: input
+    id: story
+    attributes:
+      label: Related Story
+      placeholder: "https://github.com/.../issues/123"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - label: Web
+        - label: Mobile (React Native)
+        - label: Both
+    validations:
+      required: true
+
+  - type: input
+    id: figma
+    attributes:
+      label: Figma Link
+      placeholder: "https://figma.com/..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: components
+    attributes:
+      label: Components / Variants
+      placeholder: |
+        - Component:
+          - States:
+          - Variants:
+    validations:
+      required: true
+
+  - type: textarea
+    id: tokens
+    attributes:
+      label: Design Tokens (Color/Type/Spacing)
+      placeholder: |
+        - Color:
+        - Typography:
+        - Spacing:
+    validations:
+      required: false
+
+  - type: textarea
+    id: assets
+    attributes:
+      label: Assets (icons/images/copy)
+      placeholder: |
+        - Icon:
+        - Image:
+        - Copy:
+    validations:
+      required: false
+
+  - type: textarea
+    id: qa
+    attributes:
+      label: UI QA Checklist
+      placeholder: |
+        - [ ] 모바일/웹 기본 레이아웃
+        - [ ] hover/pressed/disabled
+        - [ ] 에러/빈/로딩
+    validations:
+      required: false

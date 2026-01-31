@@ -1,0 +1,66 @@
+name: "Design - UX Flow"
+description: "플로우/IA/상태(빈/로딩/에러) 정의"
+title: "[Design/UX] "
+labels: ["design", "ux"]
+body:
+  - type: markdown
+    attributes:
+      value: "✅ Owner=Assignee 지정, 완료 후 Story에 링크 업데이트"
+
+  - type: input
+    id: story
+    attributes:
+      label: Related Story
+      placeholder: "https://github.com/.../issues/123"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - label: Web
+        - label: Mobile (React Native)
+        - label: Both
+    validations:
+      required: true
+
+  - type: textarea
+    id: flow
+    attributes:
+      label: User Flow
+      placeholder: |
+        1) 
+        2) 
+        3)
+    validations:
+      required: true
+
+  - type: textarea
+    id: states
+    attributes:
+      label: States (Empty/Loading/Error)
+      placeholder: |
+        - Empty:
+        - Loading:
+        - Error:
+    validations:
+      required: true
+
+  - type: input
+    id: figma
+    attributes:
+      label: Figma Link
+      placeholder: "https://figma.com/..."
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes / Open Questions
+      placeholder: |
+        - 
+    validations:
+      required: false

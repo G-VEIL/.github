@@ -1,0 +1,152 @@
+name: "Story (기획/요구사항)"
+description: "기능 목표/범위/정책/AC를 정의하고 실행 티켓(Design/FE/BE)을 뽑아내는 스토리"
+title: "[Story] "
+labels: ["story"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ✅ **Owner(담당자)=Assignee로 지정**해 주세요.  
+        ✅ 이 Story에서 **Design/FE/BE 실행 이슈**를 파생 생성하는 것을 목표로 합니다.
+
+  - type: input
+    id: epic
+    attributes:
+      label: Epic/상위 링크
+      description: "상위 Epic(또는 상위 Story) 링크"
+      placeholder: "https://github.com/.../issues/123"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: release
+    attributes:
+      label: Release
+      options: ["MVP", "Beta", "Launch", "Post-launch"]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options: ["P0 (Very High)", "P1 (High)", "P2 (Middle)", "P3 (Low)", "P4 (Very Low)"]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options: ["Feature", "Bug", "Refactor", "Test", "CI/CD", "ETC", "Docs", "Chore", "Research"]
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - label: Web
+        - label: Mobile (React Native)
+        - label: Both
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal / Problem
+      description: "왜 필요한지 + 무엇이 성공인지"
+      placeholder: |
+        - Problem:
+        - Goal:
+        - Success metric (optional):
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope (In/Out)
+      placeholder: |
+        ## In
+        - 
+        ## Out
+        - 
+    validations:
+      required: true
+
+  - type: textarea
+    id: rules
+    attributes:
+      label: Rules / Policy (권한/제한/예외)
+      placeholder: |
+        - 권한:
+        - 제한:
+        - 예외/에러:
+    validations:
+      required: true
+
+  - type: textarea
+    id: flow
+    attributes:
+      label: UX Flow (Happy path + Empty/Loading/Error)
+      placeholder: |
+        1) 
+        2) 
+        - Empty:
+        - Loading:
+        - Error:
+    validations:
+      required: true
+
+  - type: textarea
+    id: ac
+    attributes:
+      label: Acceptance Criteria (체크리스트)
+      description: "5~12개 권장"
+      placeholder: |
+        - [ ] 
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+
+  - type: textarea
+    id: api_draft
+    attributes:
+      label: API Contract Draft (초안)
+      description: "FE/BE 합의를 위한 최소 수준"
+      placeholder: |
+        - Endpoint:
+        - Request:
+        - Response:
+        - Error codes:
+    validations:
+      required: false
+
+  - type: textarea
+    id: deliverables
+    attributes:
+      label: Output (파생 실행 이슈 링크)
+      placeholder: |
+        - Design/UX:
+        - Design/UI:
+        - FE/UI:
+        - FE/Integration:
+        - BE/Core:
+        - BE/Auth&Integration:
+    validations:
+      required: false
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / Risks
+      placeholder: |
+        - Dependency:
+        - Risk:
+        - Mitigation:
+    validations:
+      required: false
